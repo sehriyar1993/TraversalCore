@@ -1,0 +1,36 @@
+﻿@model List<DTOLayer.DTOs.AnnouncementDTOs.AnnouncementListDTO>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int saygac = 0;
+}
+
+<h1>Kampanyalar</h1>
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Başlıq</th>
+        <th>Mövzu</th>
+        <th>Ətraflı</th>
+        <th>Sil</th>
+        <th>Yenilə</th>
+
+
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            @{
+                saygac = saygac + 1;
+            }
+            <td>@saygac</td>
+            <td>@x.Title</td>
+            <td>@x.Content</td>
+            <td><a href="#" class="btn btn-outline-dark">Ətraflı</a></td>
+            <td><a href="/Admin/Announcement/DeleteAnnouncement/@x.AnnouncementID" class="btn btn-outline-warning">Sil</a></td>
+            <td><a href="/Admin/Announcement/Update/@x.AnnouncementID" class="btn btn-outline-dark">Yenilə</a></td>
+        </tr>
+    }
+</table>
+<a href="/Admin/Announcement/AddAnnouncement/" class="btn btn-outline-success">Yeni Kampanya</a>

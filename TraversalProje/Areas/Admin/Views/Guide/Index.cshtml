@@ -1,0 +1,60 @@
+﻿@using EntityLayer.Concrete
+@model List<Guide>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int saygac = 0;
+
+}
+<style>
+    img{
+        border-radius:50%;
+    }
+</style>
+<h1>Rəhbər Siyahısı</h1>
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Şəkil</th>
+        <th>Şəkil Rəhbər</th>
+        <th>Ad Soyad</th>
+        <th>Haqqında</th>
+        <th>İnstagram Link</th>
+        <th>Twitter Link</th>
+        <th>Status</th>
+        <th>Düzəliş et</th>
+        <th>Sil</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            @{
+                saygac = saygac + 1;
+            }
+            <td>@saygac</td>
+            <td><img src="@x.Image" height="60" width="60"/></td>
+            <td><img src="@x.GuideListImage" height="60" width="60"/></td>
+            <td>@x.Name</td>
+            <td>@x.Description</td>
+            <td>@x.InstagramUrl</td>
+            <td>@x.TwiterUrl</td>
+            @{
+                if(x.Status == true)
+                {
+                    <td><a href="/Admin/Guide/ChangeToFalse/@x.GuideID" class="btn btn-outline-warning">Statusu Passiv Et</a></td>
+                }
+                else
+                {
+                    <td><a href="/Admin/Guide/ChangeToTrue/@x.GuideID" class="btn btn-outline-primary">Statusu Aktiv Et</a></td>
+                }            }
+           
+            <td><a href="/Admin/Guide/EditGuide/@x.GuideID" class="btn btn-outline-success">Düzəliş et</a></td>
+            <td><a href="/Admin/Guide/Delete/@x.GuideID" class="btn btn-outline-warning">Sil</a></td>
+            
+        </tr>
+
+    }
+</table>
+<a href="/Admin/Guide/AddGuide" class="btn btn-outline-info">Yeni Rəhbər</a>
+<a href="/Admin/GuideMediatR/Index" class="btn btn-outline-info">CQRS MediatR Rəhbər List</a>

@@ -1,0 +1,33 @@
+﻿@model AnnouncementAddDTOs
+
+@{
+    ViewData["Title"] = "AddAnnouncement";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Kampaniya əlavə Etmə Səhifəsi</h1>
+<form method="post">
+    <div>
+        <input type="hidden" asp-for="AnnouncementID" class="form-control" />
+    </div>
+    <div class="form-group">
+        @Html.Label("Başlıq")
+        <input type="text" asp-for="Title" class="form-control" />
+@*        <span asp-validation-for="Title" class="text-danger"></span>
+*@    </div>
+   
+    <div class="form-group">
+        @Html.Label("Mövzu")
+        <textarea cols="30" rows="5" class="form-control" asp-for="Content"></textarea>
+@*        <span asp-validation-for="Content" class="text-danger"></span>
+*@    </div>
+    <br />
+    <div class="form-group">
+        @Html.Label("Tarix")
+        <input type="date" asp-for="Date" class="form-control" required="" />
+    </div>
+    <br />
+    <button class="btn btn-outline-success">Təsdiqlə</button>
+</form>
+
+

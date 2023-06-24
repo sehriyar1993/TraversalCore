@@ -1,0 +1,47 @@
+﻿@model List<ContactUs>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int count = 0;
+}
+
+<h1>Bizimlə Əlaqə</h1>
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Göndərən</th>
+        <th>Başlıq</th>
+        <th>Tarix</th>
+        <th>Sil</th>
+        <th>Status</th>
+        <th>Masaja Bax</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        count++;
+        <tr>
+            <th>@count</th>
+            <td>@x.Name</td>
+            <td>@x.Subject</td>
+            <td>@(((DateTime)x.MessageDate).ToString("dd-MMM-yyyy"))</td>
+            <td><a href="/Admin/ContactUs/Delete/@x.ContactUsID" class="btn btn-danger">Sil</a></td>
+            @{
+                if (x.MessageStatus == true)
+                {
+                    <td><a href="/Admin/ContactUs/ChangeToFalse/@x.ContactUsID" class="btn btn-outline-warning">Statusu Passiv Et</a></td>
+                }
+                else
+                {
+                    <td><a href="/Admin/ContactUs/ChangeToTrue/@x.ContactUsID" class="btn btn-outline-primary">Statusu Aktiv Et</a></td>
+                }
+            }
+            <td><a href="/Admin/ContactUs/Index3/@x.ContactUsID" class="btn btn-outline-dark">Masaja Bax</a></td>
+
+        </tr>
+
+    }
+</table>
+<a href="/Admin/ContactUs/Index2" class="btn btn-outline-dark">Passiv Mesajlara Bax</a>
+
+

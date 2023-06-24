@@ -1,0 +1,40 @@
+﻿@using EntityLayer.Concrete
+@model List<AppUser>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int saygac = 0;
+}
+
+<h1>İstifadəçi Siyahısı</h1>
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Ad Soyad</th>
+        <th>İstifadəçi Adı</th>
+        <th>Email</th>
+        <th>Məlumatları Yenilə</th>
+        <th>Sistemdən Sil</th>
+        <th>Şərhləri</th>
+        <th>Tur Keçmişi</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            @{saygac= saygac+1;}
+            <td>@saygac</td>
+            <td>@x.Name @x.Surname</td>
+            <td>@x.UserName</td>
+            <td>@x.Email</td>
+            <td><a href="/Admin/User/UpdateUser/@x.Id" class="btn btn-outline-success">Məlumatları Yenilə</a></td>
+            <td><a href="/Admin/User/DeleteUser/@x.Id" class="btn btn-danger">Sistemdən Sil</a></td>
+            <td><a href="/Admin/User/CommentUser/@x.Id" class="btn btn-outline-primary">Şərhləri</a></td>
+            <td><a href="/Admin/User/ReservationUser/@x.Id" class="btn btn-outline-info">Tur Keçmişi</a></td>
+        </tr>
+
+    }
+</table>
+<a href="/LogInController1/SignUp/" class="btn btn-outline-success">Yeni İstifadəçi</a>
+
+

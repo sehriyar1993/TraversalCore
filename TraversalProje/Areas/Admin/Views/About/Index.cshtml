@@ -1,0 +1,56 @@
+﻿@using EntityLayer.Concrete
+@model IEnumerable<About>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int count = 0;
+}
+<style>
+    img {
+        border-radius: 70%;
+    }
+</style>
+
+
+<h1>Haqqımızda</h1>
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Şəkil</th>
+        <th>Başlıq 1</th>
+        <th>Başlıq 2</th>
+        @*<th>Haqqında 1</th>
+        <th>Haqqında 2</th>*@
+        <th>Status</th>
+        <th>Sil</th>
+        <th>Yenilə</th>
+    
+    </tr>
+    @foreach (var x in Model)
+    {
+        count++;
+        <tr>
+            <td>@count</td>
+            <td><img src="@x.Image1" height="80" width="80" /></td>
+            <td>@x.Title</td>
+            <td>@x.Title2</td>
+           @* <td>@x.Description</td>
+            <td>@x.Description2</td>*@
+            @{
+                if (x.Status == true)
+                {
+                    <td><a href="/Admin/About/ChangeToFalse/@x.AboutID" class="btn btn-outline-warning">Statusu Passiv Et</a></td>
+                }
+                else
+                {
+                    <td><a href="/Admin/About/ChangeToTrue/@x.AboutID" class="btn btn-outline-primary">Statusu Aktiv Et</a></td>
+                }
+            }
+            <td><a href="/Admin/About/DeleteAbout/@x.AboutID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Admin/About/UpdateAbout/@x.AboutID" class="btn btn-outline-primary">Yenilə</a></td>
+        </tr>
+
+    }
+</table>
+<a href="/Admin/About/AddAbout/" class="btn btn-outline-success">Yeni</a>

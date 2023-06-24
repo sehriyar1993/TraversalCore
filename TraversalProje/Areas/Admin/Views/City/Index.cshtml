@@ -1,0 +1,142 @@
+﻿﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+@*<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="https://not-example.com/js/library.js"></script>*@
+
+<h2>Şəhər Və Turların Əlavə Edilməsi, Yenilənməsi Və Silinməsi</h2>
+<br />
+
+<button type="button" id="btngetlist" class="btn btn-outline-info">Şəhər Siyahısı</button>
+<button type="button" id="btngetbyid" class="btn btn-outline-primary">Şəhər Tap</button>
+<button type="button" id="btnaddcity" class="btn btn-outline-warning">Şəhər Əlavə Et</button>
+<button type="button" id="btndeletecity" class="btn btn-outline-danger">Sil</button>
+<button type="button" id="btnupdatecity" class="btn btn-outline-success">Yenilə</button>
+
+<br />
+<br />
+
+@*<div id="citylist">
+    Şəhər və Turların Siyahısı
+</div>*@
+<br />
+<div>
+    <input type="text" id="txtid" placeholder="Şəhərin İd dəyərini qey edin" class="form-control" />
+</div>
+<br />
+<div>
+    <input type="text" id="txtcityid" placeholder="Silinəcək İd sayını qeyd edin" class="form-control" />
+</div>
+<br />
+<div>
+    <input type="text" id="txtcityeditid" placeholder="Yenilənəcək İd dəyərini qeyd edin" class="form-control" />
+    <input type="text" id="txtcityname" placeholder="Yeniləcək ad məlumatları qeyd edin" class="form-control" />
+    <input type="text" id="txtcitdaynightname" placeholder="Yeniləmə üşün müddəti qeyd edin " class="form-control" />
+</div>
+<br />
+<div id="destinationlistbyid">
+</div>
+
+<br />
+<div>
+    <input type="text" id="txtcity" placeholder="Şəhər adını daxil edin" class="form-control" />
+    <br />
+    <input type="text" id="txtdaynight" placeholder="Müddəti daxil edin" class="form-control" />
+    <br />
+    <input type="text" id="txtprice" placeholder="Qiyməti təyin edin" class="form-control" />
+    <br />
+    <input type="text" id="txtcapacity" placeholder="maksimum rezerv oluna biləcək sayı daxil edin" class="form-control" />
+</div>
+
+<script>
+    $("#btngetlist").click(function () {
+        $.ajax({
+            contentType: "application/json",
+            dataType: "json",
+            type: "Get",
+            url: "/Admin/City/CityList/",
+            success: function (func) {
+                let w = jQuery.parseJSON(func);
+                console.log(w);
+                let tablehtml = "<table class=table table-bordered> <tr><th> Şəhər adı </th> <th> Müddət </th> <th> Qiymət </th> </tr>";
+                $.each(w, (index, value) => {
+                    tablehtml += `<tr><td>${value.City}</td> <td>${value.DayNight}</td> <td> ${value.Price} AZN </td> </tr>`
+                });
+                tablehtml += "</table>";
+                $("#citylist").html(tablehtml);
+            }
+        });
+    });
+
+    $("#btnaddcity").click(function () {
+        let cityvalues = {
+            City: $("#txtcity").val(),
+            DayNight: $("#txtdaynight").val(),
+            Price: $("#txtprice").val(),
+            Capacity: $("#txtcapacity").val()
+        };
+
+        $.ajax({
+            type: "post",
+            url: "/Admin/City/AddCityDestination/",
+            data: cityvalues,
+            success: function (func) {
+                let result = jQuery.parseJSON(func);
+                alert("Şəhər - Rota Uğurlu Bir Şəkildə Əlavə Edildi");
+            }
+        });
+    });
+
+    $("#btngetbyid").click(x => {
+        let id = $("#txtid").val();
+
+        $.ajax({
+            contentType: "application/json",
+            dataType: "json",
+            type: "Get",
+            url: "/Admin/City/GetById/",
+            data: { DestinationID: id },
+            success: function (fun2) {
+                let result = jQuery.parseJSON(fun2);
+                console.log(result);
+                let htmlstr = `<table class=table table-bordered><tr><th>Şəhər Adı</th><th>Müddət</th><th>Qiymət</th></tr><tr><td>${result.City}</td><td>${result.DayNight}</td><td>${result.Capacity}</td></tr></table>`;
+                $("#destinationlistbyid").html(htmlstr);
+            }
+        });
+    });
+
+    $("#btndeletecity").click(x => {
+        let id = $("#txtcityid").val();
+        $.ajax({
+            url: "/Admin/City/DeleteCity/" + id,
+            type: "post",
+            contentType: "application/json",
+            dataType: "json",
+            success: function (fun3) {
+                alert("Şəhər silindi");
+            }
+        });
+    });
+
+    $("#btnupdatecity").click(function () {
+        let values = {
+            DestinationID: $("#txtcityeditid").val(),
+            City: $("#txtcityname").val(),
+            DayNight: $("#txtcitdaynightname").val()
+        };
+
+        $.ajax({
+            type: "post",
+            url: "/Admin/City/UpdateCity/",
+            data: values,
+            success: function (fun4) {
+                alert("Yeniləmə Uğurlu Şəkildə Həyata Keçdi");
+            }
+        });
+    });
+
+</script>

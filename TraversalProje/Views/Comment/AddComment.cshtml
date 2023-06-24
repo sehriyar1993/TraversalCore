@@ -1,0 +1,39 @@
+﻿@model EntityLayer.Concrete.Destination
+﻿@if (User.Identity.IsAuthenticated)
+{
+    
+<div class="leave-comment-form mt-5" id="reply">
+    <h4 class="side-title mb-2">Bir şərh yazın</h4>
+    <p class="mb-4">
+        İşarələnmiş hissəri doldurmaq mütləqdir *
+    </p>
+    <form method="post" asp-action="AddComment" asp-controller="Comment">
+        <input type="hidden" name="DestinationID" value="@ViewBag.destID" />
+        <input type="hidden" name="AppUserID" value="@ViewBag.userID" />
+
+        <div class="form-group" >
+            <textarea name="CommentCondent" class="form-control" placeholder="Şərhiniz*" required=""
+                      spellcheck="false"></textarea>
+        </div>
+@*        <div class="input-grids row">
+
+            <div class="form-group col-lg-6">
+                <input type="text" name="CommentUser" class="form-control" placeholder="Ad Soyad*"
+                       >
+            </div>
+            <div class="form-group col-lg-6">
+                <input type="hidden" value="@Model.DestinationID "name="DestinationID" class="form-control" placeholder="Destination ID*" required="">
+            </div>
+        </div>
+*@
+        <div class="submit text-right">
+            <button class="btn btn-style btn-primary">Şərh Yaz </button>
+        </div>
+    </form>
+</div>
+<script src="https://code.iquery.com/iquery-3.5.1.min.is" type="text/javascript"></script>
+}
+else
+{
+    <h2>Şərh yazmaq üçün qeydiyyat mütləqdir.</h2>
+}

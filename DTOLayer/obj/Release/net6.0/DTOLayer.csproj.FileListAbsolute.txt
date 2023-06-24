@@ -1,0 +1,12 @@
+C:\Users\Hp Pavilion Gaming\source\repos\DTOLayer\bin\Release\net6.0\DTOLayer.deps.json
+C:\Users\Hp Pavilion Gaming\source\repos\DTOLayer\bin\Release\net6.0\DTOLayer.dll
+C:\Users\Hp Pavilion Gaming\source\repos\DTOLayer\bin\Release\net6.0\DTOLayer.pdb
+C:\Users\Hp Pavilion Gaming\source\repos\DTOLayer\obj\Release\net6.0\DTOLayer.csproj.AssemblyReference.cache
+C:\Users\Hp Pavilion Gaming\source\repos\DTOLayer\obj\Release\net6.0\DTOLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Hp Pavilion Gaming\source\repos\DTOLayer\obj\Release\net6.0\DTOLayer.AssemblyInfoInputs.cache
+C:\Users\Hp Pavilion Gaming\source\repos\DTOLayer\obj\Release\net6.0\DTOLayer.AssemblyInfo.cs
+C:\Users\Hp Pavilion Gaming\source\repos\DTOLayer\obj\Release\net6.0\DTOLayer.csproj.CoreCompileInputs.cache
+C:\Users\Hp Pavilion Gaming\source\repos\DTOLayer\obj\Release\net6.0\DTOLayer.dll
+C:\Users\Hp Pavilion Gaming\source\repos\DTOLayer\obj\Release\net6.0\refint\DTOLayer.dll
+C:\Users\Hp Pavilion Gaming\source\repos\DTOLayer\obj\Release\net6.0\DTOLayer.pdb
+C:\Users\Hp Pavilion Gaming\source\repos\DTOLayer\obj\Release\net6.0\ref\DTOLayer.dll

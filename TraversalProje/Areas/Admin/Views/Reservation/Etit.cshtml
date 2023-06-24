@@ -1,0 +1,83 @@
+﻿@using EntityLayer.Concrete
+@model List<Reservation>
+@{
+    ViewData["Title"] = "Etit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Etit</h1>
+
+@*<form method="post">
+    <div class="form-group">
+        @Html.Label("İstifadəçi")
+        @Html.DropDownListFor(x=>x.GuideID,(List<SelectListItem>)ViewBag.v,new {@class="form-control"})
+    </div>
+    <div class="form-group">
+        @Html.Label("Şəhər")
+        <input type="text" asp-for="City" class="form-control" />
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.Label("Müddət")
+        <input type="text" asp-for="DayNight" class="form-control" />
+    </div>
+    <br />
+
+    <div class="form-group">
+        @Html.Label("Qiymət")
+        <input type="text" asp-for="Price" class="form-control" />
+    </div>
+    <br />
+    <div>
+        @Html.Label("Status")
+        <input type="checkbox" asp-for="Status" class="form-check-input" />
+
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.Label("Şəkil")
+        <input type="text" asp-for="Image" class="form-control" />
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.Label("Boş Yerlər")
+        <input type="text" asp-for="Capacity" class="form-control" />
+    </div>
+    <br />
+
+    <div class="form-group">
+        @Html.Label("Fon Şəkili")
+        <input type="text" asp-for="CoverImage" class="form-control" />
+    </div>
+    <br />
+
+    <div class="form-group">
+        @Html.Label("Şəkil - 2")
+        <input type="text" asp-for="Image2" class="form-control" />
+    </div>
+    <br />
+
+    <div class="form-group">
+        @Html.Label("Başlıq")
+        <textarea cols="30" rows="5" class="form-control" asp-for="Detail1"></textarea>
+    </div>
+    <br />
+
+    <div class="form-group">
+        @Html.Label("Başlıq 2")
+        <textarea cols="30" rows="5" class="form-control" asp-for="Detail2"></textarea>
+    </div>
+    <br />
+
+    <div class="form-group">
+        @Html.Label("Haqqında")
+        <textarea cols="30" rows="5" class="form-control" asp-for="Description"></textarea>
+    </div>
+    <div class="form-group">
+        @Html.Label("Tarix")
+        <input type="date" asp-for="Date" class="form-control" required="" />
+    </div>
+    <br />
+    <button class="btn btn-outline-success">Təsdiqlə</button>
+</form>
+*@

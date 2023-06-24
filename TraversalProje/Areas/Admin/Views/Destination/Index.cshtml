@@ -1,0 +1,43 @@
+﻿@using EntityLayer.Concrete
+@model List<Destination>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    //int count = 0;
+}
+
+<h1>Tur Rota</h1>
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Şəhər</th>
+        <th>Müddət</th>
+        <th>Boş Yerlər</th>
+        <th>Qiymət</th>
+        <th>Tarix</th>       
+        <th>Sil</th>
+        <th>Yenilə</th>
+        <th>Saytda Gör</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        @*count++;*@
+        <tr>
+            @*<td>@count</td>*@
+            <td>@x.DestinationID</td>
+            <td>@x.City</td>
+            <td>@x.DayNight</td>
+            <td>@x.Capacity</td>
+            <td>@x.Price Azn</td>
+            <td> @(((DateTime)x.Date).ToString("dd-MMM-yyyy"))</td>
+            <td><a href="/Admin/Destination/DeleteDestination/@x.DestinationID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Admin/Destination/UpdateDestination/@x.DestinationID" class="btn btn-outline-primary">Yenilə</a></td>
+            <td><a href="/Destination/DestinationDetas/@x.DestinationID" class="btn btn-outline-info">Saytda Gör</a></td>
+        </tr>
+
+    }
+</table>
+<a href="/Admin/Destination/AddDestination/" class="btn btn-outline-success">Yeni Tur Rotası</a>
+@*<a href="/Admin/City/Index" class="btn btn-outline-success">Şəhər Və Turların Əlavə Edilməsi, Yenilənməsi Və Silinməsi</a>
+*@@*<a href="/Admin/DestinationCQRS/Index" class="btn btn-outline-success">CQRS-Şəhər Və Turların Əlavə Edilməsi, Yenilənməsi Və Silinməsi</a>*@

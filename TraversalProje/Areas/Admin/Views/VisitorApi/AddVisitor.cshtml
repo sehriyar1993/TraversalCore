@@ -1,0 +1,46 @@
+﻿@using TraversalProje.Areas.Admin.Models;
+@model VisitorViewModel
+@{
+    ViewData["Title"] = "AddVisitor";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>APİ İstifadəçi Əlavə Etmə</h1>
+
+<form method="post">
+    <div class="form-group">
+        <input type="hidden" asp-for="VisitorID" class="form-control" />
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.Label("Ad")
+        <input type="text" asp-for="Name" class="form-control" />
+    </div>
+    <br />
+
+    <div class="form-group">
+        @Html.Label("Soyad")
+        <input type="text" asp-for="Surname" class="form-control" />
+    </div>
+    <br />
+
+    <div class="form-group">
+        @Html.Label("Şəhər")
+        <input type="text" asp-for="City" class="form-control" />
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.Label("Ölkə")
+        <input type="text" asp-for="Country" class="form-control" />
+    </div>
+    <br />
+
+    <div class="form-group">
+        @Html.Label("Mail")
+        <input type="text" asp-for="Mail" class="form-control" />
+    </div>
+    <br />
+    <br />
+    <button class="btn btn-outline-success">Təsdiqlə</button>
+</form>
+

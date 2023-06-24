@@ -1,0 +1,100 @@
+﻿@using TraversalProje.Areas.Admin.Models
+@model IEnumerable<BookingHotelViewModel.Result>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int saygac = 0;
+    string deyer = "";
+
+}
+
+<h1>Booking\Otel Rezarvasiya Səhifəsi</h1>
+<h3>Otel Siyahısı---Türkiyə</h3>
+<table class="table table-striped">
+    <tr>
+        <th>#</th>
+        <th>Otel Adı</th>
+        <th>Otel Reytinqi</th>
+        <th>Şəkil</th>
+        <th>Dəyərləndirmələr</th>
+        <th>Yeri</th>
+        <th>Açıqlama</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            @{
+                saygac = saygac + 1;
+            }
+            <td>@saygac</td>
+            <td>@x.name </td>
+            <td>@x.reviewScore</td>
+            <td><img src="@x.photoMainUrl" height="60" width="60" /></td>
+            @{
+                if (x.reviewScoreWord == "Pleasant")
+                  {
+                      <td>Normal</td>
+                  }
+            }
+            @{
+                if (x.reviewScoreWord == "Wonderful")
+                  {
+                      <td>Əla</td>
+                  }
+            }@{
+                if (x.reviewScoreWord == "Very Good")
+                  {
+                      <td>Çox yaxşı</td>
+                  }
+            }@{
+                if (x.reviewScoreWord == "Excellent")
+                {
+                    <td>Möhtəşəm</td>
+                }
+            }
+            @{
+                if (x.reviewScoreWord == "Bad")
+                {
+                    <td>Pis</td>
+                }
+            }
+            @{
+                if (x.reviewScoreWord == "Good")
+                {
+                    <td>Yaxşı</td>
+                }
+            }
+            @{
+                if (x.reviewScoreWord == "Disappointing")
+                {
+                    <td>Orta</td>
+                }
+            }
+
+            @{
+                if (x.reviewScoreWord == "Very Poor")
+                {
+                    <td>Çox Pis</td>
+                }
+            }
+              @{
+                if (x.reviewScoreWord == "")
+                {
+                    <td>Dəyərləndirmə Yoxdur</td>
+                }
+            }
+            @{
+                if (x.reviewScoreWord == "Exceptional")
+                {
+                    <td>Tam Qiymət</td>
+                }
+            }
+@*            <td>@x.reviewScoreWord</td>
+*@            <td>@x.wishlistName</td>
+            <td><a href="#" class="btn btn-outline-success">Açıqlama</a></td>
+
+        </tr>
+
+    }
+</table>
+

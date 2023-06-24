@@ -1,0 +1,15 @@
+﻿using EntityLayer.Concrete;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BisnessLayer.Abstarct
+{
+    public interface IAboutServices: IGenericServices<About>
+    {
+        void TChangeToTrueGuide(int id);
+        void TChangeToFalseGuide(int id);
+    }
+}

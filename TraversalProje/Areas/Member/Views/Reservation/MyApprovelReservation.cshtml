@@ -1,0 +1,40 @@
+﻿@using EntityLayer.Concrete
+@model List<Reservation>
+@{
+    ViewData["Title"] = "MyApprovelReservation";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<h3>Təsdiq Gözləyən Rezervasiyalar</h3>
+<h6>@ViewBag.v</h6>
+
+@if (!Model.Any())
+{
+    <span>Məlumat yoxdur</span>
+}
+else
+{
+    <table class="table table-bordered">
+        <tr>
+            <th>#</th>
+            <th>Şəhər</th>
+            <th>Say Nəfər</th>
+            <th>Tarix</th>
+            <th>Status</th>
+        </tr>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@x.ReservationId</td>
+                <td>@x.Destination.City</td>
+                <td>@x.PersonCount</td>
+                <td>@x.ReservationDate</td>
+                <td>@x.Status</td>
+
+            </tr>
+        }
+    </table>
+
+}
+
+

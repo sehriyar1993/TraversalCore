@@ -1,0 +1,32 @@
+﻿@using TraversalProje.Areas.Admin.Models;
+@model AccountViewModel
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Pul Transfer</h1>
+
+<form method="post">
+    <div class="form-group">
+        @Html.Label(" Göndərən")
+        <input type="text" asp-for="SenderID" class="form-control" />
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.Label("Alan")
+        <input type="text" asp-for="ReceiverID" class="form-control" />
+
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.Label("Miqdar")
+        <input type="text" asp-for="Amount" class="form-control" />
+
+    </div>
+    <br />
+    <br />
+
+    <button class="btn btn-outline-success">Təsdiqlə</button>
+</form>

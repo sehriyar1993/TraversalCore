@@ -1,0 +1,44 @@
+﻿@model IEnumerable<About>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_UILayout.cshtml";
+}
+
+@foreach (var x in Model)
+{
+    <section class="w3l-cta4 py-5">
+        <div class="container py-lg-5">
+            <div class="ab-section text-center">
+                <h6 class="sub-title">Haqqımızda</h6>
+                <h3 class="hny-title">Dünyanı bizimlə kəşf edin.</h3>
+                <p class="py-3 mb-3">
+                   @x.Title
+                </p>
+             
+            </div>
+            <div class="row mt-5">
+                <div class="col-md-9 mx-auto">
+                    <img src="@x.Image1" class="img-fluid" alt="" style="width:1170px; height:500px">
+                </div>
+            </div>
+        </div>
+    </section>
+   
+    <section class="w3l-content-6 py-5">
+        <div class="container py-lg-5">
+            <div class="row">
+                <div class="col-lg-6 content-6-left pr-lg-5">
+                    <h6 class="sub-title">Nə Üçün Bizi Seçməlisiniz</h6>
+                    <h3 class="hny-title">@x.Title2</h3>
+                </div>
+                <div class="col-lg-6 content-6-right mt-lg-0 mt-4">
+   
+                    <p class="mb-3">
+                        @x.Description2.
+                    </p>
+                    <a href="services.html" class="btn btn-style btn-primary mt-4">Read More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+}

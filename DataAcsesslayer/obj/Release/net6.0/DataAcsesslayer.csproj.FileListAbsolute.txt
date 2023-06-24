@@ -1,0 +1,17 @@
+C:\Users\Hp Pavilion Gaming\source\repos\DataAcsesslayer\bin\Release\net6.0\DataAcsesslayer.deps.json
+C:\Users\Hp Pavilion Gaming\source\repos\DataAcsesslayer\bin\Release\net6.0\DataAcsesslayer.runtimeconfig.json
+C:\Users\Hp Pavilion Gaming\source\repos\DataAcsesslayer\bin\Release\net6.0\DataAcsesslayer.dll
+C:\Users\Hp Pavilion Gaming\source\repos\DataAcsesslayer\bin\Release\net6.0\DataAcsesslayer.pdb
+C:\Users\Hp Pavilion Gaming\source\repos\DataAcsesslayer\bin\Release\net6.0\EntityLayer.dll
+C:\Users\Hp Pavilion Gaming\source\repos\DataAcsesslayer\bin\Release\net6.0\EntityLayer.pdb
+C:\Users\Hp Pavilion Gaming\source\repos\DataAcsesslayer\obj\Release\net6.0\DataAcsesslayer.csproj.AssemblyReference.cache
+C:\Users\Hp Pavilion Gaming\source\repos\DataAcsesslayer\obj\Release\net6.0\DataAcsesslayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Hp Pavilion Gaming\source\repos\DataAcsesslayer\obj\Release\net6.0\DataAcsesslayer.AssemblyInfoInputs.cache
+C:\Users\Hp Pavilion Gaming\source\repos\DataAcsesslayer\obj\Release\net6.0\DataAcsesslayer.AssemblyInfo.cs
+C:\Users\Hp Pavilion Gaming\source\repos\DataAcsesslayer\obj\Release\net6.0\DataAcsesslayer.csproj.CoreCompileInputs.cache
+C:\Users\Hp Pavilion Gaming\source\repos\DataAcsesslayer\obj\Release\net6.0\DataAcsesslayer.csproj.CopyComplete
+C:\Users\Hp Pavilion Gaming\source\repos\DataAcsesslayer\obj\Release\net6.0\DataAcsesslayer.dll
+C:\Users\Hp Pavilion Gaming\source\repos\DataAcsesslayer\obj\Release\net6.0\refint\DataAcsesslayer.dll
+C:\Users\Hp Pavilion Gaming\source\repos\DataAcsesslayer\obj\Release\net6.0\DataAcsesslayer.pdb
+C:\Users\Hp Pavilion Gaming\source\repos\DataAcsesslayer\obj\Release\net6.0\DataAcsesslayer.genruntimeconfig.cache
+C:\Users\Hp Pavilion Gaming\source\repos\DataAcsesslayer\obj\Release\net6.0\ref\DataAcsesslayer.dll

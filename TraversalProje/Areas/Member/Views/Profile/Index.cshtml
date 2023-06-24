@@ -1,0 +1,40 @@
+﻿@model TraversalProje.Areas.Member.Models.UserEditViewModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<h1>Profilini Ayarla</h1>
+<form method="post" enctype="multipart/form-data">
+    @Html.Label("Ad")
+    <input type="text" asp-for="name" class="form-control"/>
+    <br />
+    @Html.Label("Soyad")
+    <input type="text" asp-for="surname" class="form-control" />
+    <br />
+    @Html.Label("İstifadəçi adı")
+    <input type="text" asp-for="username" class="form-control" />
+    <br />
+    @Html.Label("Mail adresi")
+    <input type="text" asp-for="mail" class="form-control" />
+    <br />
+    @Html.Label("Telefon nömrəsi")
+    <input type="text" asp-for="phonenumber" class="form-control" />
+    <br />
+    @*@Html.Label("Şəkil")
+    <input type="text" asp-for="imageurl" class="form-control" />
+    <br />*@
+    @Html.Label("Şifrə")
+    <input type="text" asp-for="password" class="form-control" />
+    <br />
+    @Html.Label("Şifrəni təkrarla")
+    <input type="text" asp-for="comfirmpassword" class="form-control" />
+    <br />
+    <div class="form-group">
+        <label>Şəkil Seçin</label>
+        <input type="file" asp-for="Image" class="form-control" />
+    </div>
+    <br />
+    <button class="btn btn-primary">Məlumatları Yenilə</button>
+</form>
+

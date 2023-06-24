@@ -1,0 +1,31 @@
+﻿@using TraversalCoreProje.CQRS.Results.DestinationResults;
+@model GetDestinationByIDQueryResult
+@{
+    ViewData["Title"] = "GetDestination";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Tur Məlumatlarını Yenilə</h1>
+
+<form method="post">
+    <imput typeof="hidden" asp-for="DestinationID" />
+    <div class="form-group">
+        @Html.Label("Şəhər")
+        <input type="text" asp-for="City" class="form-control" />
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.Label("Müddət")
+        <input type="text" asp-for="DayNight" class="form-control" />
+    </div>
+    <br />
+
+    <div class="form-group">
+        @Html.Label("Qiymət")
+        <input type="text" asp-for="Price" class="form-control" />
+    </div>
+    <br />
+
+    <button class="btn btn-outline-success">Təsdiqlə</button>
+</form>
+
